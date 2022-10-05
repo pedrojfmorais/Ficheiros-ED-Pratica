@@ -139,6 +139,23 @@ public class Main {
         return (double) res / tab.length;
     }
 
+    //Ex6
+    public static int binEx6(int [] tab, int start, int end){
+
+        int firstPosition = binPosicaoEx4(tab, start);
+        int lastPosition = binPosicaoEx4(tab, end);
+
+        if(firstPosition < 0)
+            firstPosition = -firstPosition - 1;
+
+        if(lastPosition < 0)
+            lastPosition = -lastPosition - 1;
+        else
+            lastPosition++;
+
+        return lastPosition - firstPosition;
+    }
+
     public static void main(String[] args) {
 
         int[] array = {3,7,12,15};
@@ -160,10 +177,16 @@ public class Main {
 //        System.out.println("Resultado '" + binPosicaoEx4(array, 13) + "'.");
 //        System.out.println("Resultado '" + binPosicaoEx4(array, 16) + "'.");
 
-        System.out.println("Resultado '" + binEx5(array, 15) + "'.");
-        System.out.println("Resultado '" + binEx5(array, 14) + "'.");
-        System.out.println("Resultado '" + binEx5(array, 3) + "'.");
-        System.out.println("Resultado '" + binEx5(array, 1) + "'.");
-        System.out.println("Resultado '" + binEx5(array, 100) + "'.");
+//        System.out.println("Resultado '" + binEx5(array, 15) + "'.");
+//        System.out.println("Resultado '" + binEx5(array, 14) + "'.");
+//        System.out.println("Resultado '" + binEx5(array, 3) + "'.");
+//        System.out.println("Resultado '" + binEx5(array, 1) + "'.");
+//        System.out.println("Resultado '" + binEx5(array, 100) + "'.");
+//
+        System.out.println("Resultado '" + binEx6(array, 0, 15) + "'.");
+        System.out.println("Resultado '" + binEx6(array, 3, 7) + "'.");
+        System.out.println("Resultado '" + binEx6(array, 4, 14) + "'.");
+        System.out.println("Resultado '" + binEx6(array, 4, 5) + "'.");
+        System.out.println("Resultado '" + binEx6(array, 0, 100) + "'.");
     }
 }
