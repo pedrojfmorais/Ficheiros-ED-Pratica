@@ -3,30 +3,30 @@ import java.util.Arrays;
 public class ex3 {
     public static int ex3(int [] tab, int chave){
 
-        int mid;
-        int pos = tab.length/2 + 1;
+        int start = 0;
+        int end = tab.length - 1;
 
-        while(true){
+        int pos = tab.length/2;
 
-            mid = tab[tab.length/2];
+        do{
 
-            if(mid == chave)
-                return pos - 1;
+            if(tab[pos] == chave)
+                return pos;
 
-            else if(tab.length == 1)
-                return -1;
+            else if(tab[pos] < chave)
+                start = pos + 1;
 
-            else if(mid < chave) {
-                tab = Arrays.copyOfRange(tab, tab.length / 2, tab.length);
-                pos += Math.floor((float)tab.length/2);
-            }
+            else
+                end = pos - 1;
 
-            else if(mid > chave) {
-                tab = Arrays.copyOfRange(tab, 0, tab.length / 2);
-                pos -= Math.ceil((float)tab.length/2);
-            }
+            pos = (start + end) / 2;
 
-        }
+        }while(start < end);
+
+        if(tab[pos] == chave)
+            return pos;
+
+        return -1;
     }
 
     public static void main(String[] args) {
@@ -34,5 +34,6 @@ public class ex3 {
         int[] array = {3,7,12,15};
 
         System.out.println("Resultado '" +  ex3(array, 1) + "'.");
+        System.out.println("Resultado '" +  ex3(array, 12) + "'.");
     }
 }
