@@ -1,11 +1,14 @@
-package Ficha4.ex4;
+package Ficha4.ex6;
+
+import Ficha4.ex4.ItDezReaisMutavel;
 
 import java.util.Iterator;
 
 public class DezReaisMutavel  implements Iterable<Double> {
     private final Double[] numbers;
     private final int CAPACITY = 10;
-    protected int last = 0;
+    private int last = 0;
+    private int counterModifications = 0;
 
     public DezReaisMutavel() {
         numbers = new Double[CAPACITY];
@@ -15,8 +18,9 @@ public class DezReaisMutavel  implements Iterable<Double> {
 
         if (size() >= CAPACITY)
             throw new RuntimeException();
-        else
-            numbers[last++] = num;
+
+        numbers[last++] = num;
+        counterModifications++;
     }
 
     public void remove(int indice){
@@ -29,6 +33,7 @@ public class DezReaisMutavel  implements Iterable<Double> {
 
         if(last>-1)
             last--;
+        counterModifications++;
     }
 
     public Double get(int indice) {
@@ -38,12 +43,16 @@ public class DezReaisMutavel  implements Iterable<Double> {
         return numbers[indice];
     }
 
+    public int getCounterModifications() {
+        return counterModifications;
+    }
+
     public int size() {
         return last;
     }
 
     @Override
     public Iterator<Double> iterator() {
-        return new ItDezReaisMutavel(this);
+        return new ItDezReaisPositivos(this);
     }
 }

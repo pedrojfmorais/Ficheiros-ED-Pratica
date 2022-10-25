@@ -1,14 +1,14 @@
 package Ficha4;
 
-import Ficha4.ex1.DezReais;
-import Ficha4.ex3.ItDezReais;
+import Ficha4.ex5.DezReaisMutavel;
+import Ficha4.ex5.ItDezReaisMutavel;
 
 public class Main {
     public static void main(String[] args) {
-        //ex1
-        DezReais dr = new DezReais();
-        //ex3
-        ItDezReais it = new ItDezReais(dr);
+        //ex4
+        DezReaisMutavel dr = new DezReaisMutavel();
+        //ex5
+        ItDezReaisMutavel it = new ItDezReaisMutavel(dr);
 
         for (int i = 0; i < 10; i++)
             dr.add(i*1.1);
