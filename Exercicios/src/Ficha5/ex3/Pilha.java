@@ -31,4 +31,9 @@ public class Pilha<T> {
     public void push(T valor){
         pilha.add(valor);
     }
+
+    @Override
+    public String toString() {
+        return pilha.toString();
+    }
 }

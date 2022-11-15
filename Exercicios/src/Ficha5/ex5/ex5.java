@@ -6,15 +6,15 @@ import java.util.ListIterator;
 
 public class ex5 {
 
-    public static <T> void reverse(List<T> lista){
-        ListIterator<T> inicio = lista.listIterator();
-        ListIterator<T> fim = lista.listIterator(lista.size());
+    public static <T> void reverse(List<? super T> lista){
+        ListIterator inicio = lista.listIterator();
+        ListIterator fim = lista.listIterator(lista.size());
 
         T primeiro, ultimo;
 
         while (inicio.nextIndex() < fim.previousIndex()){
-            primeiro = inicio.next();
-            ultimo = fim.previous();
+            primeiro = (T) inicio.next();
+            ultimo = (T) fim.previous();
 
             inicio.set(ultimo);
             fim.set(primeiro);
