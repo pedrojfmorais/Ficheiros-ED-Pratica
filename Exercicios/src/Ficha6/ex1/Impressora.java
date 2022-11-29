@@ -68,13 +68,12 @@ public class Impressora {
 
     @Override
     public String toString() {
-        return "Impressora{" +
+        return "Impressora: " +
                 "nome='" + nome + '\'' +
                 ", porto=" + porto +
                 ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", driver='" + driver + '\'' +
-                ", versao=" + versao +
-                '}';
+                ", versao=" + versao + '\'';
     }
 }

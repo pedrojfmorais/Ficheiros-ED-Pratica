@@ -34,4 +34,6 @@ public class Trabalho {
     public void setPaginaFinal(int paginaFinal) {
         this.paginaFinal = paginaFinal;
     }
+
+    public int getPaginas(){return paginaFinal-paginaInicial;}
 }
