@@ -4,8 +4,8 @@ import java.util.*;
 
 public class BinaryTree<T extends Comparable<? super T>> {
 
-    private Node<T> raiz;
-    private Comparator<T> comparator;
+    protected Node<T> raiz;
+    protected Comparator<T> comparator;
 
     public BinaryTree(Comparator<T> comparator) {
         this.raiz = null;
